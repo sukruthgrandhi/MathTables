@@ -1,3 +1,4 @@
+import './App.css'
 import QuestionCard, { type Question } from './components/QuestionCard'
 
 const questions: Question[] = [
@@ -17,9 +18,11 @@ function App() {
   return (
     <>
       <h1>Hello Multiplication Tables</h1>
-      {questions.map((q) => (
-        <QuestionCard key={`${q.table}x${q.multiplier}`} question={q} />
-      ))}
+      <div className="question-list">
+        {questions.map((q) => (
+          <QuestionCard key={`${q.table}x${q.multiplier}`} question={q} />
+        ))}
+      </div>
     </>
   )
 }
