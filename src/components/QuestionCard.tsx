@@ -1,9 +1,14 @@
-interface QuestionCardProps {
+export interface Question {
   table: number
   multiplier: number
 }
 
-function QuestionCard({ table, multiplier }: QuestionCardProps) {
+interface QuestionCardProps {
+  question: Question
+}
+
+function QuestionCard({ question }: QuestionCardProps) {
+  const { table, multiplier } = question
   return (
     <div>
       {table} × {multiplier} = {table * multiplier}
